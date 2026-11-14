@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: global-sponsorship
+    runtime: static
+    buildCommand: echo "Sitio estatico, sin build"
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=300
